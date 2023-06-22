@@ -410,7 +410,7 @@ function reportStep2(xml, report_id, month) {
 			let affiliates = [];
 			xmlDoc = xml.getElementsByTagName("Table1");
 			console.log(xmlDoc.length);
-			console.log;
+			console.log(xml);
 			for (let i = 0; i < xmlDoc.length; i++) {
 				affiliates.push({
 					Affiliate:
@@ -488,6 +488,12 @@ function reportStep2(xml, report_id, month) {
 					Number_of_Mobile_Sales: Number(
 						xmlDoc[i]
 							.getElementsByTagName("Number_of_Mobile_Sales")[0]
+							.childNodes[0].nodeValue.replaceAll(",", "")
+							.replaceAll("$", "")
+					),
+					Average_Sale_Amount: Number(
+						xmlDoc[i]
+							.getElementsByTagName("Average_Sale_Amount")[0]
 							.childNodes[0].nodeValue.replaceAll(",", "")
 							.replaceAll("$", "")
 					),
@@ -584,6 +590,7 @@ function reportStep2(xml, report_id, month) {
 					topTen.push(report.yoyPerformance[k]);
 				}
 				buildAffiliateTable(primaryMonth.affiliateReport);
+				console.log("affreport done");
 				buildQuickStatsTable();
 				removeDisabledButton("product_report_btn");
 				completeButton(

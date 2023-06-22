@@ -281,7 +281,7 @@ function buildNewPerformersTable(y1, y2, y3) {
 					primaryMonth.affiliateReport[l].Number_of_Sales,
 					primaryMonth.affiliateReport[l].Conversion_Rate,
 					`<div class="form-check form-switch">
-  <input class="form-check-input" onchange='addNotableAffiliate(` +
+  						<input class="form-check-input" onchange='addNotableAffiliate(` +
 						[primaryMonth.affiliateReport[l].Affiliate_Id, 2] +
 						`)' type="checkbox" id="` +
 						primaryMonth.affiliateReport[l].Affiliate_Id +
@@ -295,8 +295,8 @@ function buildNewPerformersTable(y1, y2, y3) {
 		report.newAffsMonth3.length,
 		toUSD(month2Total),
 		`<table class="table table-striped centered table-sm" id="notableTable2"><tbody style="font-size: small">
-									<thead id="notableThead2"></thead>
-								</tbody></table>`,
+			<thead id="notableThead2"></thead>
+			</tbody></table>`,
 	]);
 	for (m = 0; m < report.newAffsMonth3.length; m++) {
 		for (n = 0; n < primaryMonth.affiliateReport.length; n++) {
@@ -320,7 +320,7 @@ function buildNewPerformersTable(y1, y2, y3) {
 					primaryMonth.affiliateReport[n].Number_of_Sales,
 					primaryMonth.affiliateReport[n].Conversion_Rate,
 					`<div class="form-check form-switch">
-  <input class="form-check-input" onchange='addNotableAffiliate(` +
+  						<input class="form-check-input" onchange='addNotableAffiliate(` +
 						[primaryMonth.affiliateReport[n].Affiliate_Id, 3] +
 						`)' type="checkbox" id="` +
 						primaryMonth.affiliateReport[n].Affiliate_Id +
@@ -338,8 +338,8 @@ function buildNewPerformersTable(y1, y2, y3) {
 		report.newAffsMonth3.length,
 		toUSD(month3Total),
 		`<table class="table table-striped centered table-sm" id="notableTable3"><tbody style="font-size: small">
-									<thead id="notableThead3"></thead>
-								</tbody></table>`,
+			<thead id="notableThead3"></thead>
+			</tbody></table>`,
 	]);
 	removeDisabledButton("addNotablesBtn");
 

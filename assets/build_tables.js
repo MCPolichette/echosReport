@@ -327,14 +327,12 @@ function buildAffiliateTable(array) {
 	let thead = document.getElementById("affTableTHead");
 	let headArray = [
 		"Affiliate",
-		data.abMonth + " " + report.year + " Sales",
-		"YoY %",
-		data.abMonth + " " + report.year + " Clicks",
-		"YoY %",
-		data.abMonth + " " + report.year + " TotalSpend",
-		"YoY %",
-		data.abMonth + " " + report.year + " ROAS",
-		"YoY %",
+		"Ad Impressions",
+		"Clicks",
+		"Sales",
+		"Orders",
+		"Avg Order",
+		"Conversion",
 	];
 	for (var i = 0; i < headArray.length; i++) {
 		thead
@@ -352,19 +350,15 @@ function buildAffiliateTable(array) {
 	for (let i = 0; i < report.topAffiliateCount; i++) {
 		buildRow(table, i, [
 			array[i].Affiliate,
-			toUSD(array[i].Sales),
-			percentNaNCheck(array[i].salesYOYpercent),
+			array[i].Ad_Impressions,
 			array[i].Click_Throughs,
-			percentNaNCheck(array[i].Click_ThroughsYOYpercent),
-			toUSD(array[i].Total_Commission.toFixed(2)),
-			percentNaNCheck(array[i].totalCommissionYOYPercent),
-			toUSD(array[i].roa.toFixed(2)),
-			percentNaNCheck(array[i].roaYOYPercent),
+			toUSD(array[i].Sales),
+			array[i].Number_of_Sales,
+			toUSD(array[i].Average_Sale_Amount),
+			array[i].Conversion_Rate + "%",
 		]);
 	}
-	add_borders("affiliateSummaryReport", 3);
-	add_borders("affiliateSummaryReport", 5);
-	add_borders("affiliateSummaryReport", 7);
+	console.log("afftable populated");
 	affiliateReportButton.disabled = true;
 }
 

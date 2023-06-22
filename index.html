@@ -204,7 +204,7 @@
 														aria-describedby="selectedYear"
 													/>
 												</div>
-												<div class="form-check">
+												<div class="form-check" hidden>
   													<input class="form-check-input" type="checkbox" value="" id="mobileSalesCheck" checked>
   													<label class="form-check-label" for="mobileSalesCheck">Display Mobile Sales in quickStats
   													</label></div>
@@ -523,29 +523,36 @@
 						<div class="col-8 test">
 							<h5>Key Metrics</h5>
 							<div class="row ">
-								<div class=" border 	border-primary border-3 	rounded col-3 keyBox">
+								<div class=" rounded col-4 keyBox1 ">
+									<div class="border 	border-primary border-3 keyBoxIn">
 									<h6 id="keySales" ></h6>
-								<p>Sales</p>
+								<p>Sales</p></div>
 									</div>
-								<div class="border 	border-primary border-3 	rounded col-3 keyBox">
+								<div class="rounded col-4 keyBox1 ">
+									<div class="border 	border-primary border-3 keyBoxIn">
 									<h6 id="keyNumber_of_Sales" ></h6>
-								<p>Number of Sales</p>
+								<p>Number of Sales</p></div>
 									</div>
-								<div class="border 	border-primary border-3 	rounded col-3 keyBox">
+								<div class="rounded col-4 keyBox1 ">
+									<div class="border 	border-primary border-3 keyBoxIn">
 									<h6 id="keyClicks" ></h6>
-								<p>Click Throughs</p>
+								<p>Click Throughs</p></div>
 									</div>
-								<div class="border 	border-primary border-3 	rounded col-3 keyBox">
+									</div><br><div class="row">
+								<div class="rounded col-4 keyBox1 ">
+									<div class="border 	border-primary border-3 keyBoxIn">
 									<h6 id="keyAvg_Sale" ></h6>
-								<p>Avg Sale Amount</p>
+								<p>Avg Sale Amount</p></div>
 									</div>
-								<div class="border 	border-primary border-3 	rounded col-3 keyBox">
+								<div class="rounded col-4 keyBox1 ">
+									<div class="border 	border-primary border-3 keyBoxIn">
 									<h6 id="keyConversionRate" ></h6>
-								<p>Conversion Rate</p>
+								<p>Conversion Rate</p></div>
 									</div>
-								<div class="border 	border-primary border-3 	rounded col-3 keyBox">
+								<div class="rounded col-4 keyBox1 ">
+									<div class="border 	border-primary border-3 keyBoxIn">
 									<h6 id="keyNewAffs" ></h6>
-								<p>New Affiliates</p>
+								<p>New Affiliates</p></div>
 									</div>
 							</div>
 						</div>
@@ -604,8 +611,7 @@
 					<div class="row" id="topAffRow">
 						<br />
 						<div class="col-12">
-
-							<h5>Top Affiliate YOY Performances</h5>
+							<h5>Top Affiliate Performances</h5>
 							<div class="input-group mb-3 border border-warning removeForPrint border-4">
   								<input type="text"id="updateTopPerformers" class="form-control bg-warning removeForPrint" placeholder="Change Number of displayed Affiliates" aria-label="Change Number of Affiliates" aria-describedby="updateTopPerformers">
   								<button class="btn btn-warning removeForPrint" onclick="updateTopPerformers()"type="button" >Click to Change # of displayed Performers</button>
