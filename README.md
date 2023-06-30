@@ -9,9 +9,9 @@ Listed below
 [x] Update Year Over Year and Month Over Month tables as an option to display
 [-] Add in new graph that outliens YTD with
 Impressions, Clicks, Sales, Orders, AVG Order, Conversion
-[-] Top Performing Partners Monthly
+[x] Top Performing Partners Monthly
 Update YOY calculations as an option to display ...........Wants YOY removed
-[-] Adding in metrics in this order,
+[x] Adding in metrics in this order,
 Impressions, Clicks (already there), Sales (already there), Orders, Avg order, Conversion
 [x] Update New Partner Performance as an option to display
 [x] Top Growing YoY and Top Declining Performance as an option to display

@@ -143,59 +143,6 @@ function reportStep2(xml, report_id, month) {
 			buildSubAffTable(report.subAffiliates);
 			break;
 		// case 65:
-		// 	let affArray = [];
-		// 	let growthArr = [];
-		// 	let declineArr = [];
-		// 	xmlDoc = xml.getElementsByTagName("Table1");
-		// 	console.log(xmlDoc);
-		// 	console.log;
-		// 	for (let i = 0; i < xmlDoc.length; i++) {
-		// 		affArray.push({
-		// 			Affiliate:
-		// 				xmlDoc[i].getElementsByTagName("Affiliate_Name")[0]
-		// 					.childNodes[0].nodeValue,
-		// 			Sales_Current: Number(
-		// 				xmlDoc[i]
-		// 					.getElementsByTagName("Sales_Current")[0]
-		// 					.childNodes[0].nodeValue.replaceAll(",", "")
-		// 					.replaceAll("$", "")
-		// 			),
-		// 			Sales_Previous: Number(
-		// 				xmlDoc[i]
-		// 					.getElementsByTagName("Sales_Previous")[0]
-		// 					.childNodes[0].nodeValue.replaceAll(",", "")
-		// 					.replaceAll("$", "")
-		// 			),
-		// 			Percent_Change_in_Sales: Number(
-		// 				xmlDoc[i]
-		// 					.getElementsByTagName("Percent_Change_in_Sales")[0]
-		// 					.childNodes[0].nodeValue.replaceAll(",", "")
-		// 					.replaceAll("%", "")
-		// 			),
-		// 		});
-		// 	}
-		// 	for (j = 0; j < affArray.length; j++) {
-		// 		if (
-		// 			affArray[j].Sales_Previous > 0 &&
-		// 			affArray[j].Sales_Current > 0
-		// 		) {
-		// 			growthArr.push(affArray[j]);
-		// 			declineArr.push(affArray[j]);
-		// 		}
-		// 	}
-		// 	console.log(affArray);
-		// 	growthArr.sort(
-		// 		(a, b) =>
-		// 			parseFloat(b.Percent_Change_in_Sales) -
-		// 			parseFloat(a.Percent_Change_in_Sales)
-		// 	);
-		// 	declineArr.sort(
-		// 		(a, b) =>
-		// 			parseFloat(a.Percent_Change_in_Sales) -
-		// 			parseFloat(b.Percent_Change_in_Sales)
-		// 	);
-
-		// buildGrowthAndDeclineTables(declineArr, growthArr);
 
 		// break;
 		case 48:
