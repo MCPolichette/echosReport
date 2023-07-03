@@ -266,6 +266,13 @@ function reportStep2(xml, report_id, month) {
 			break;
 		case 18:
 			console.log(xmlDoc.getElementsByTagName("Product_SKU").length);
+			if (
+				xmlDoc.getElementsByTagName("Product_SKU").length <
+				report.itemCount
+			) {
+				report.itemCount =
+					xmlDoc.getElementsByTagName("Product_SKU").length;
+			}
 			for (let i = 0; i < report.itemCount; i++) {
 				let x = {};
 				x.Product_SKU =
@@ -285,8 +292,11 @@ function reportStep2(xml, report_id, month) {
 					x.Product_Name = "Product name not specified";
 				}
 				report.productList[i] = x;
+				console.log(x);
 			}
+
 			removeDisabledButton("select_affiliates_btn");
+
 			completeButton(
 				"product_report_btn",
 				"COMPLETED - Products Sold API"

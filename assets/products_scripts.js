@@ -1,4 +1,5 @@
 function build_products_sold_table() {
+	console.log("Building Products Sold Function");
 	let table = document.getElementById("productsSoldReport");
 	let thead = document.getElementById("productTHead");
 	let headArray = [
@@ -8,13 +9,15 @@ function build_products_sold_table() {
 		"Mobile Sales Count",
 		"Total Sales Amount",
 	];
-	for (var i = 0; i < headArray.length; i++) {
+	for (var j = 0; j < headArray.length; j++) {
+		console.log(j);
 		thead
 			.appendChild(document.createElement("th"))
-			.appendChild(document.createTextNode(headArray[i]));
+			.appendChild(document.createTextNode(headArray[j]));
 	}
 	// table.style.textAlign = "right";
 	for (let i = 0; i < report.productList.length; i++) {
+		console.log(i);
 		buildRow(
 			table,
 			[i],
