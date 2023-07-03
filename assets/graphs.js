@@ -11,7 +11,7 @@ function drawChart1() {
 	const options = {
 		title: "Sales Performance By Month",
 		width: 1100,
-		height: 250,
+		height: 320,
 		hAxis: { slantedText: true },
 		vAxis: {
 			format: "currency",

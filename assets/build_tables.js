@@ -348,15 +348,17 @@ function buildAffiliateTable(array) {
 	}
 	table.style.textAlign = "right";
 	for (let i = 0; i < report.topAffiliateCount; i++) {
-		buildRow(table, i, [
-			array[i].Affiliate,
-			array[i].Ad_Impressions,
-			array[i].Click_Throughs,
-			toUSD(array[i].Sales),
-			array[i].Number_of_Sales,
-			toUSD(array[i].Average_Sale_Amount),
-			array[i].Conversion_Rate + "%",
-		]);
+		if (array[i].Sales > 0) {
+			buildRow(table, i, [
+				array[i].Affiliate,
+				array[i].Ad_Impressions,
+				array[i].Click_Throughs,
+				toUSD(array[i].Sales),
+				array[i].Number_of_Sales,
+				toUSD(array[i].Average_Sale_Amount),
+				array[i].Conversion_Rate + "%",
+			]);
+		}
 	}
 	console.log("afftable populated");
 	affiliateReportButton.disabled = true;
@@ -437,13 +439,15 @@ function buildSubAffTable(array) {
 	}
 	table.style.textAlign = "right";
 	for (let i = 0; i < report.topAffiliateCount; i++) {
-		buildRow(table, i, [
-			array[i].Affiliate + " - " + array[i].Sub_Affiliate_Domain,
-			toUSD(array[i].Sales),
-			array[i].Click_Throughs,
-			toUSD(array[i].Total_Commission.toFixed(2)),
-			toUSD(array[i].roa.toFixed(2)),
-		]);
+		if (array[i].Sales > 0) {
+			buildRow(table, i, [
+				array[i].Affiliate + " - " + array[i].Sub_Affiliate_Domain,
+				toUSD(array[i].Sales),
+				array[i].Click_Throughs,
+				toUSD(array[i].Total_Commission.toFixed(2)),
+				toUSD(array[i].roa.toFixed(2)),
+			]);
+		}
 	}
 	affiliateReportButton.disabled = true;
 	completeButton(

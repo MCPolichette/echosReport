@@ -40,6 +40,11 @@
         // Set the value in the text field
         document.getElementById("password_input").value = storedValue;
       }
+	   // Get the current year
+    var currentYear = new Date().getFullYear();
+
+    // Populate the input field with the current year
+    document.getElementById("selectedYear").value = currentYear;
     };
 	</script>
 	</head>
@@ -521,7 +526,7 @@
 					</div>
 					<div class="row">
 						<div class="col-8 test">
-							<h5>Key Metrics</h5>
+							<h4>Key Metrics</h4>
 							<div class="row ">
 								<div class=" rounded col-4 keyBox1 ">
 									<div class="border 	border-primary border-3 keyBoxIn">
@@ -574,11 +579,11 @@
 							<button type="button" id= 'yoyAndMomRowBtn'onclick="hideRow('yoyAndMomRow', 'yoyAndMomRowBtn')" class="close btn btn-sm btn-warning " aria-label="Close"> Hide the Display Below </button>
 						</div>
 						<div class="row align-top" id='yoyAndMomRow'>
-							
 							<div class="col-12">
-								<h5 id="ytdSummaryReportHeader">
+								<hr>
+								<h4 id="ytdSummaryReportHeader">
 									YTD Monthly Summary Report
-								</h5>
+								</h4>
 								<table
 									id="ytdSummaryReport"
 									class="table table-striped centered table-sm"
@@ -593,25 +598,24 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5>Monthly Sales Performance</h5>
+							<h4>Monthly Sales Performance</h4>
 							<div id="monthlyPerformanceGraph" style="width: auto"></div>
 						</div>
 							<div class="col-12">
-							<h5>Daily Sales Performance</h5>
+							<h4>Daily Sales Performance</h4>
 							<div id="dailyPerformanceGraph" style="width: auto"></div>
 						</div>
 						</div>
 							<div class="col-12">
-							<h5>Number of Sales Performance</h5>
+							<h4>Number of Sales Performance</h4>
 							<div id="secondPerformanceChart" style="width: auto"></div>
 						</div>
 					<div class=" removeForPrint close justify-content-md-end">
 							<button type="button" id= 'topAffRowBtn'onclick="hideRow('topAffRow', 'topAffRowBtn')" class="close btn btn-sm btn-warning " aria-label="Close"> Hide the Display Below </button>
 						</div>
 					<div class="row" id="topAffRow">
-						<br />
-						<div class="col-12">
-							<h5>Top Affiliate Performances</h5>
+						<div class="col-12" style="margin-top: 50px;">
+							<h4>Top Affiliate Performances</h4>
 							<div class="input-group mb-3 border border-warning removeForPrint border-4">
   								<input type="text"id="updateTopPerformers" class="form-control bg-warning removeForPrint" placeholder="Change Number of displayed Affiliates" aria-label="Change Number of Affiliates" aria-describedby="updateTopPerformers">
   								<button class="btn btn-warning removeForPrint" onclick="updateTopPerformers()"type="button" >Click to Change # of displayed Performers</button>
@@ -632,7 +636,7 @@
 					<div class="row"id="newPartnerRow">
 						
 						<div id="newAffCol" class="col-6">
-							<h5>New Partner Performance</h5>
+							<h4>New Partner Performance</h4>
 							<table
 								id="newPartnerReport"
 								class="table table-striped centered "
@@ -648,7 +652,7 @@
 						</div> -->
 					<!-- <div class="row" id="growAndDeclineRow">
 						<div class="col-6">
-							<h5>Top Growing YoY Performance</h5>
+							<h4>Top Growing YoY Performance</h4>
 							<table
 								id="growing_report"
 								class="table table-striped centered table-sm"
@@ -659,7 +663,7 @@
 							</table>
 						</div>
 						<div class="col-6">
-							<h5>Top Declining YoY Performance</h5>
+							<h4>Top Declining YoY Performance</h4>
 							<table
 								id="declining_report"
 								class="table table-striped centered table-sm"
@@ -692,7 +696,7 @@
 						
 						<br />
 						<div class="col-12">
-							<h5>Sub Affiliate Report</h5>
+							<h4>Sub Affiliate Report</h4>
 							<table
 								id="subAffiliateSummaryReport"
 								class="table table-striped centered table-sm"
@@ -707,7 +711,7 @@
 						</div>
 					<div id="productsRow" class="row">
 						<div class="col-12">
-							<h5>Products Sold Report</h5>
+							<h4>Products Sold Report</h4>
 							<table
 								id="productsSoldReport"
 								class="table table-striped centered table-sm"
@@ -732,7 +736,7 @@
 			</div></div>
 			<div id="noteInputSection" class="row border border-warning border-4 removeForPrint">
 						<div class="col-8 ">
-				<h5>Add Note</h5>
+				<h4>Add Note</h4>
 				<p>(This input display will be removed for printing/exporting)</p>
 				<div class="form-group">
 					<label for="noteTitle">Note Title:</label>
