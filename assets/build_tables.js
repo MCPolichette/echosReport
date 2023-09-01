@@ -357,16 +357,13 @@ function buildAffiliateTable(array) {
 			if (array[i].Sales > 0) {
 				buildRow(table, i, [
 					array[i].Affiliate,
-					toUSD(array[i].Sales),
-					percentNaNCheck(array[i].salesYOYpercent),
+					array[i].Ad_Impressions,
 					array[i].Click_Throughs,
-					percentNaNCheck(array[i].Click_ThroughsYOYpercent),
-					toUSD(array[i].Total_Commission.toFixed(2)),
-					percentNaNCheck(array[i].totalCommissionYOYPercent),
-					toUSD(array[i].roa.toFixed(2)),
-					percentNaNCheck(array[i].roaYOYPercent),
+					toUSD(array[i].Sales),
+					array[i].Number_of_Sales,
+					toUSD(array[i].Average_Sale_Amount),
+					array[i].Conversion_Rate + "%",
 				]);
-				console.log(i);
 			}
 		}
 	}
