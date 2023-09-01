@@ -347,17 +347,27 @@ function buildAffiliateTable(array) {
 		}
 	}
 	table.style.textAlign = "right";
-	for (let i = 0; i < report.topAffiliateCount; i++) {
-		if (array[i].Sales > 0) {
-			buildRow(table, i, [
-				array[i].Affiliate,
-				array[i].Ad_Impressions,
-				array[i].Click_Throughs,
-				toUSD(array[i].Sales),
-				array[i].Number_of_Sales,
-				toUSD(array[i].Average_Sale_Amount),
-				array[i].Conversion_Rate + "%",
-			]);
+	console.log("ALERT", report.topAffiliateCount);
+	if (array.length < report.topAffiliateCount) {
+		report.topAffiliateCount = array.length;
+	}
+	if (report.topAffiliateCount) {
+		for (let i = 0; i < report.topAffiliateCount; i++) {
+			console.log(array.length);
+			if (array[i].Sales > 0) {
+				buildRow(table, i, [
+					array[i].Affiliate,
+					toUSD(array[i].Sales),
+					percentNaNCheck(array[i].salesYOYpercent),
+					array[i].Click_Throughs,
+					percentNaNCheck(array[i].Click_ThroughsYOYpercent),
+					toUSD(array[i].Total_Commission.toFixed(2)),
+					percentNaNCheck(array[i].totalCommissionYOYPercent),
+					toUSD(array[i].roa.toFixed(2)),
+					percentNaNCheck(array[i].roaYOYPercent),
+				]);
+				console.log(i);
+			}
 		}
 	}
 	console.log("afftable populated");
