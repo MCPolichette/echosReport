@@ -354,7 +354,19 @@ function buildAffiliateTable(array) {
 	if (report.topAffiliateCount) {
 		for (let i = 0; i < report.topAffiliateCount; i++) {
 			console.log(array.length);
-			if (array[i].Sales > 0) {
+			if (array[0].Sales > 0) {
+				if (array[i].Sales > 0) {
+					buildRow(table, i, [
+						array[i].Affiliate,
+						array[i].Ad_Impressions,
+						array[i].Click_Throughs,
+						toUSD(array[i].Sales),
+						array[i].Number_of_Sales,
+						toUSD(array[i].Average_Sale_Amount),
+						array[i].Conversion_Rate + "%",
+					]);
+				}
+			} else {
 				buildRow(table, i, [
 					array[i].Affiliate,
 					array[i].Ad_Impressions,
@@ -446,7 +458,17 @@ function buildSubAffTable(array) {
 	}
 	table.style.textAlign = "right";
 	for (let i = 0; i < report.topAffiliateCount; i++) {
-		if (array[i].Sales > 0) {
+		if (array[0].Sales > 0) {
+			if (array[i].Sales > 0) {
+				buildRow(table, i, [
+					array[i].Affiliate + " - " + array[i].Sub_Affiliate_Domain,
+					toUSD(array[i].Sales),
+					array[i].Click_Throughs,
+					toUSD(array[i].Total_Commission.toFixed(2)),
+					toUSD(array[i].roa.toFixed(2)),
+				]);
+			}
+		} else {
 			buildRow(table, i, [
 				array[i].Affiliate + " - " + array[i].Sub_Affiliate_Domain,
 				toUSD(array[i].Sales),
