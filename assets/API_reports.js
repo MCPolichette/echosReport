@@ -138,6 +138,12 @@ function reportStep2(xml, report_id, month) {
 			subAffiliates.sort(function (a, b) {
 				return b.Sales - a.Sales;
 			});
+			if (subAffiliates[0].Sales == 0) {
+				console.log("NO SALES, Switching to clicks.");
+				subAffiliates.sort(function (a, b) {
+					return b.Click_Throughs - a.Click_Throughs;
+				});
+			}
 			console.log(subAffiliates);
 			report.subAffiliates = subAffiliates;
 			buildSubAffTable(report.subAffiliates);
@@ -536,6 +542,13 @@ function reportStep2(xml, report_id, month) {
 					}
 				}
 				primaryMonth.affiliateReport.sort((a, b) => b.Sales - a.Sales);
+				if (primaryMonth.affiliateReport[0].Sales == 0) {
+					console.log("NO SALES, Switching to clicks.");
+					primaryMonth.affiliateReport.sort(function (a, b) {
+						return b.Click_Throughs - a.Click_Throughs;
+					});
+				}
+				console.log(primaryMonth.affiliateReport);
 				report.yoyPerformance.sort(function (a, b) {
 					return b.Sales - a.Sales;
 				});
