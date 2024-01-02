@@ -80,6 +80,7 @@ function buildQuickStatsTable() {
 	console.log("QUICKSTATS DONE");
 }
 function buildYTDTable() {
+	console.log("YTD BEGAN.. troubleshoot here");
 	let table = document.getElementById("ytdSummaryReport");
 	let thead = document.getElementById("ytdSummaryTHead");
 	let summaryHeadersArray = [
@@ -95,13 +96,12 @@ function buildYTDTable() {
 			.appendChild(document.createElement("th"))
 			.appendChild(document.createTextNode(summaryHeadersArray[i]));
 	}
-	console.log("ATTENTION!!!! OOF");
 	table.style.textAlign = "right";
-	for (var j = 0; j < data.monthlyPerformanceSummary.length; j++) {
-		if (data.monthlyPerformanceSummary[j].Month.endsWith("-Dec")) {
-			break; // Stop the loop when December is encountered
-		}
-		console.log("ATTENTION!!!!!", j);
+	for (var j = 0; j < data.thisMonthArray[0]; j++) {
+		// if (data.monthlyPerformanceSummary[j].Month.endsWith("-Dec")) {
+		// 	break; // Stop the loop when December is encountered
+		// }
+		console.log("yotd-m0nth-", j);
 		buildRow(table, j, [
 			data.monthlyPerformanceSummary[j].Month,
 			toUSD(data.monthlyPerformanceSummary[j].Sales),

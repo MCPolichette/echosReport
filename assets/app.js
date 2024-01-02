@@ -162,6 +162,7 @@ function perfomance_report() {
 
 	let selectedYear = document.getElementById("selectedYear").value;
 	report.year = Number(selectedYear);
+	console.log("report ", report.year);
 	if (document.getElementById("yoyDisplayCheck")) {
 		report.hideYoY = true;
 	}
